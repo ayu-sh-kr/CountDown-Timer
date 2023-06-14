@@ -36,21 +36,24 @@ function stop(){
 function countdown(){
     if(timer === true){
         let days = Math.floor(time / (24 * 60 * 60));
-                    console.log(days);
+                    // console.log(days);
                     document.getElementById('days').textContent = days.toString();
 
                     let hours = Math.floor((time - (days * 24 * 60 * 60)) / (60 * 60));
-                    console.log(hours);
+                    // console.log(hours);
                     document.getElementById('hours').textContent = hours.toString();
 
                     let minutes = Math.floor((time - (days * 24 * 60 * 60) - (hours * 60 * 60)) / 60);
-                    console.log(minutes);
+                    // console.log(minutes);
                     document.getElementById('minutes').textContent = minutes.toString();
 
                     let seconds = Math.floor(time - (days * 24 * 60 * 60) - (hours * 60 * 60) - minutes * 60);
-                    console.log(seconds);
+                    // console.log(seconds);
                     document.getElementById('seconds').textContent = seconds.toString();
                     time--;
+                    if(time === 0){
+                        reset();
+                    }
         setTimeout("countdown()", 1000);
     }
 }
